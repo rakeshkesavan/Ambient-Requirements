@@ -1,0 +1,61 @@
+name: User Stories Board
+description: Kanban board to manage and track user stories for the project.
+public: false
+
+fields:
+  - name: Status
+    data_type: single_select
+    options:
+      - name: Backlog
+        color: gray
+      - name: Grooming
+        color: blue
+      - name: In Progress
+        color: yellow
+      - name: QA / Review
+        color: orange
+      - name: Done
+        color: green
+
+  - name: Priority
+    data_type: single_select
+    options:
+      - name: High
+        color: red
+      - name: Medium
+        color: yellow
+      - name: Low
+        color: green
+
+  - name: Type
+    data_type: single_select
+    options:
+      - name: Feature
+        color: blue
+      - name: Epic
+        color: purple
+      - name: Bug
+        color: red
+      - name: Tech Debt
+        color: gray
+
+  - name: Sprint
+    data_type: text
+
+  - name: Story Points
+    data_type: number
+
+views:
+  - name: Kanban View
+    layout: board
+    filter: ""
+    group_by: Status
+
+  - name: Table View
+    layout: table
+    filter: ""
+
+  - name: By Priority
+    layout: board
+    filter: ""
+    group_by: Priority
